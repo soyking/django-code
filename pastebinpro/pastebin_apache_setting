@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+
+    ServerName pastebin.com
+    DocumentRoot /var/www/pastebinpro
+    Alias /static/ /var/www/pastebinpro/static/
+
+    <Directory /var/www/pastebinpro>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / /var/www/pastebinpro/pastebinpro/wsgi.py
+
+ </VirtualHost>

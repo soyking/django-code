@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in posts %}
+<hr>
+<h2>{{post.title}}  |id:{{post.id}}</h2>
+<p>{{post.id|yesno:"yes,no"}}</p>
+<h3>{{post.author.name}}</h3>
+<p>{{post.timestamp|date:"l,F jS"}}</p>
+<p>{{post.body}}</p>
+{% endfor %}
+{% endblock %}

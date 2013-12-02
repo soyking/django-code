@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+
+    ServerName mysite.com
+    DocumentRoot /var/www/mysite
+    Alias /static/ /var/www/mysite/mysite/static/
+
+    <Directory /var/www/mysite>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / /var/www/mysite/mysite/wsgi.py
+
+ </VirtualHost>

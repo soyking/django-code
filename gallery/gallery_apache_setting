@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+
+    ServerName gallery.com
+    DocumentRoot /var/www/gallery
+    Alias /static/ /var/www/gallery/gallery/static/
+    Alias /media/  /var/www/gallery/media/
+    #/media/ used in settings.py,path to photo folder
+
+    <Directory /var/www/gallery>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / /var/www/gallery/gallery/wsgi.py
+
+ </VirtualHost>

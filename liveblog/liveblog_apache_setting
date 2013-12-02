@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+
+    ServerName liveblog.com
+    DocumentRoot /var/www/liveblog
+    Alias /static/ /var/www/liveblog/liveblog/static/
+    Alias /media/ /var/www/liveblog/media/
+
+    <Directory /var/www/liveblog>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / /var/www/liveblog/liveblog/wsgi.py
+
+
+ </VirtualHost>
